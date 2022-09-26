@@ -1,0 +1,2454 @@
+{
+	"info": {
+		"_postman_id": "80132a30-9ff7-4b9d-9cb8-20690aeff9e0",
+		"name": "jarvis MLP staging",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15916338"
+	},
+	"item": [
+		{
+			"name": "general",
+			"item": [
+				{
+					"name": "Base info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/base-information",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"base-information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth schema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/auth/schema",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"auth",
+								"schema"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "System status Anglo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/system-status-anglo",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"system-status-anglo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "System status Petrosea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/system-status-petrosea",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"system-status-petrosea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/refresh/all",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"refresh",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh legends",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/refresh/legends",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"refresh",
+								"legends"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menu legend",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/menu-legend",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"menu-legend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assets list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/list",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assets settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assets settings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settings\": [\r\n        {\r\n            \"group\": \"status_widget\",\r\n            \"key\": \"kpi_notification\",\r\n            \"value\": \"false\"\r\n        },\r\n        {\r\n            \"group\": \"menulegend\",\r\n            \"key\": \"maintenance\",\r\n            \"value\": \"#ff0000\"\r\n        },\r\n        {\r\n            \"group\": \"menulegend\",\r\n            \"key\": \"delays\",\r\n            \"value\": \"#ffa500\"\r\n        },\r\n        {\r\n            \"group\": \"menulegend\",\r\n            \"key\": \"effectivetime\",\r\n            \"value\": \"#00b347\"\r\n        },\r\n        {\r\n            \"group\": \"menulegend\",\r\n            \"key\": \"standby\",\r\n            \"value\": \"#03fcf8\"\r\n        },\r\n        {\r\n            \"group\": \"timeline\",\r\n            \"key\": \"firstWeekDay\",\r\n            \"value\": \"3\"\r\n        },\r\n        {\r\n            \"group\": \"timeline\",\r\n            \"key\": \"lastWeekDay\",\r\n            \"value\": \"4\"\r\n        },\r\n        {\r\n            \"group\": \"blockmodel\",\r\n            \"key\": \"default_property\",\r\n            \"value\": \"grade_1\"\r\n        },\r\n        {\r\n            \"group\": \"trucks\",\r\n            \"key\": \"sample_delta_time\",\r\n            \"value\": \"90\"\r\n        },\r\n        {\r\n            \"group\": \"trucks\",\r\n            \"key\": \"show_load\",\r\n            \"value\": \"false\"\r\n        },\r\n        {\r\n            \"group\": \"trucks\",\r\n            \"key\": \"sample_distance\",\r\n            \"value\": \"100\"\r\n        },\r\n        {\r\n            \"group\": \"trucks\",\r\n            \"key\": \"z_offset\",\r\n            \"value\": \"1\"\r\n        },\r\n        {\r\n            \"group\": \"trucks\",\r\n            \"key\": \"drift_from_realtime\",\r\n            \"value\": \"360\"\r\n        },\r\n        {\r\n            \"group\": \"delta\",\r\n            \"key\": \"AtrasoPlan\",\r\n            \"value\": \"#f90000\"\r\n        },\r\n        {\r\n            \"group\": \"delta\",\r\n            \"key\": \"is_shiftmanager_metadata_available\",\r\n            \"value\": \"false\"\r\n        },\r\n        {\r\n            \"group\": \"delta\",\r\n            \"key\": \"AtrasoPasado\",\r\n            \"value\": \"#000000\"\r\n        },\r\n        {\r\n            \"group\": \"delta\",\r\n            \"key\": \"DentroPlan\",\r\n            \"value\": \"#12cc37\"\r\n        },\r\n        {\r\n            \"group\": \"delta\",\r\n            \"key\": \"Atraso\",\r\n            \"value\": \"#8b0000\"\r\n        },\r\n        {\r\n            \"group\": \"delta\",\r\n            \"key\": \"FueraPlan\",\r\n            \"value\": \"#e2b900\"\r\n        },\r\n        {\r\n            \"group\": \"delta\",\r\n            \"key\": \"AdelantoPasado\",\r\n            \"value\": \"#000000\"\r\n        },\r\n        {\r\n            \"group\": \"delta\",\r\n            \"key\": \"Adelanto\",\r\n            \"value\": \"#adf802\"\r\n        },\r\n        {\r\n            \"group\": \"trucks.streaming\",\r\n            \"key\": \"sample_delta_time\",\r\n            \"value\": \"100\"\r\n        },\r\n        {\r\n            \"group\": \"trucks.streaming\",\r\n            \"key\": \"z_offset\",\r\n            \"value\": \"1\"\r\n        },\r\n        {\r\n            \"group\": \"trucks.streaming\",\r\n            \"key\": \"drift_from_realtime\",\r\n            \"value\": \"100\"\r\n        },\r\n        {\r\n            \"group\": \"trucks.streaming\",\r\n            \"key\": \"sample_distance\",\r\n            \"value\": \"300\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_deviation\",\r\n            \"key\": \"accepted\",\r\n            \"value\": \"0.1\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_deviation\",\r\n            \"key\": \"bad\",\r\n            \"value\": \"0.3\"\r\n        },\r\n        {\r\n            \"group\": \"nps\",\r\n            \"key\": \"months_per_survey\",\r\n            \"value\": \"1\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PHK15\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PAB06\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PAB08\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PAB12\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PAB11\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PHK09\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PAB10\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PHK13\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PHK14\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"CFL08\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PAB07\",\r\n            \"value\": \"1000\"\r\n        },\r\n        {\r\n            \"group\": \"shovel_target\",\r\n            \"key\": \"PAB05\",\r\n            \"value\": \"1000\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{tima-server}}/assets/settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Connector settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/connector_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"connector_settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Connector settings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settings\": [\r\n        {\r\n            \"group\": \"connectors_config\",\r\n            \"key\": \"truck_valid_prefix\",\r\n            \"value\": \"CA\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/connector_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"connector_settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tooltip settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/tooltip_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"tooltip_settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "World transform raw",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/worldtransform",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"worldtransform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "world-transform*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/queries/world-transform",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"queries",
+								"world-transform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remote object",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Type\": \"waterroadsall_mtl\",\r\n    \"Tags\": {},\r\n    \"Host\": \"http://localhost:9000/assets/remote-object\",\r\n    \"Bucket\": \"meshes\",\r\n    \"Path\": \"water_roads_all.mtl\",\r\n    \"Extension\": \"mtl\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remote object batch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/batch",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "heatmaps",
+			"item": [
+				{
+					"name": "Difheatmap png raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/query/difheatmap_png",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"difheatmap_png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Difheatmap mtl raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/difheatmap_mtl",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"difheatmap_mtl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Haultrips raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/haultrips_difHeatmap_obj",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"haultrips_difHeatmap_obj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Speed Plan Haul",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/heatmap-plan-haul",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"heatmap-plan-haul"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loadtrips raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/loadtrips_difHeatmap_obj",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"loadtrips_difHeatmap_obj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Speed Plan Load",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/heatmap-plan-haul",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"heatmap-plan-haul"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Speed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/heatmap-speed",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"heatmap-speed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "speed mtl raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/speedheatmap_mtl",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"speedheatmap_mtl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "speed obj raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/speedheatmap_obj",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"speedheatmap_obj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "speed png raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/speedheatmap_png",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"speedheatmap_png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Waterroadsall png raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/query/waterroadsall_png",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"waterroadsall_png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Waterroadsall mtl raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/waterroadsall_mtl",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"waterroadsall_mtl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watertruckall obj raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/watertruckallheatmap_obj",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"watertruckallheatmap_obj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watering all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/heatmap-watering-all",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"heatmap-watering-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watering no suppressor png raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/query/waterroadsnosuppressor_png",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"waterroadsnosuppressor_png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watering no suppressor mtl raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/waterroadsnosuppressor_mtl",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"waterroadsnosuppressor_mtl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watering no suppressor obj raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/watertrucknosuppressorheatmap_obj",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"watertrucknosuppressorheatmap_obj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watering no suppresor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/heatmap-watering-no-suppressor",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"heatmap-watering-no-suppressor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watering suppressor mtl raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/waterroadssuppressor_mtl",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"waterroadssuppressor_mtl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watering suppressor png raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/query/waterroadssuppressor_png",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"waterroadssuppressor_png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " Watering suppressor obj raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/query/watertrucksuppressorheatmap_obj",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"watertrucksuppressorheatmap_obj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watering suppressor*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/heatmap-watering-suppressor",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"heatmap-watering-suppressor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Speed legend DMH",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/speed-heatmap-gps-legend-dmh",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"speed-heatmap-gps-legend-dmh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fuel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/heatmap-fuelrate",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"heatmap-fuelrate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "load and haul",
+			"item": [
+				{
+					"name": "Trucks info (raw)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var moment = require('moment');\r",
+									"\r",
+									"pm.collectionVariables.set('currentdate', moment().format((\"YYYY-MM-DD\")));"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var responseData = pm.response.json()\r",
+									"var moment = require('moment')\r",
+									"var cont;\r",
+									"\r",
+									"for (cont=0;cont<responseData.length;cont++){ \r",
+									"    pm.test(\"Validación de fecha de camion:\"+responseData[cont].id, () => {   \r",
+									"    var date_response= responseData[cont].last_known_position.t;\r",
+									" pm.expect(moment(date_response).format('YYYY-MM-DD')).to.eql(pm.collectionVariables.get('currentdate'));\r",
+									"});}\r",
+									"\r",
+									"console.log(responseData.length); //numero de camiones \r",
+									"//edit probe"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/raw_trucks_trucks",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"raw_trucks_trucks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Truck tooltip*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/truck-tooltip",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"truck-tooltip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Truck positions streaming",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/truck-positions-streaming",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"truck-positions-streaming"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Interpolated coords",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/lhs_interpolated_coords",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"lhs_interpolated_coords"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Truck positions polling",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/truck-positions-polling",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"truck-positions-polling"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LHS sites (raw)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/lhs_sites",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"lhs_sites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crusher-positions-mlp-staging*",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var moment = require('moment');\r",
+									"\r",
+									"pm.collectionVariables.set('currentdate', moment().format((\"YYYY-MM-DD\")));"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var responseData = pm.response.json()  //es para traer todo el response en formato json\r",
+									"var moment = require('moment')         //trae fecha \r",
+									"var cont;                              //variable ramdon creada para usarse como contador\r",
+									"\r",
+									"pm.test(\"Validación de fecha\", () => {\r",
+									"for (cont=0;cont<responseData.length;cont++){   \r",
+									"    if (responseData[cont].last_known_position!==null){   //si la ultima posicion no es nula\r",
+									"    var date_response= responseData[cont].last_known_position.t;\r",
+									"    console.log(date_response);\r",
+									"    //console.log(moment(date_response).format('YYYY-MM-DD'))\r",
+									"    pm.expect(moment(date_response).format('YYYY-MM-DD')).to.eql(pm.collectionVariables.get('currentdate'));\r",
+									"}}\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/crusher-positions-mlp-staging",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"crusher-positions-mlp-staging"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop points (raw)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/lhs_stop_points",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"lhs_stop_points"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop points",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/stop-points",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"stop-points"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LH charts raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/load_and_haul_report",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"load_and_haul_report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LH charts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/load-and-haul-chart",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"load-and-haul-chart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shovels info (raw)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//console.log(pm.collectionVariables.get('currentdate'));\r",
+									"\r",
+									"var responseData = pm.response.json()\r",
+									"var moment = require('moment')\r",
+									"var cont;\r",
+									"\r",
+									"pm.test(\"Validación de fecha\", () => {\r",
+									"for (cont=0;cont<responseData.length;cont++){    \r",
+									"    var date_response= responseData[cont].last_known_position.t;\r",
+									"    console.log(date_response)\r",
+									"    console.log(moment(date_response).format('YYYY-MM-DD'))\r",
+									"    pm.expect(moment(date_response).format('YYYY-MM-DD')).to.eql(pm.collectionVariables.get('currentdate'));\r",
+									"}\r",
+									"});\r",
+									"\r",
+									"pm.collectionVariables.set('NumPalas',responseData.length)\r",
+									"\r",
+									"for (cont=0;cont<responseData.length;cont++){  \r",
+									"pm.collectionVariables.set('namePala'+cont,responseData[cont].name)\r",
+									"pm.collectionVariables.set('fechaPala'+cont,responseData[cont].last_known_position.t)\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var moment = require('moment');\r",
+									"\r",
+									"pm.collectionVariables.set('currentdate', moment().format((\"YYYY-MM-DD\")));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/raw_shovels_shovels",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"raw_shovels_shovels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shovel positions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var id;\r",
+									"var cont;\r",
+									"//console.log(jsonData._vehicleData[0]._positions[0]._datetime);\r",
+									"\r",
+									"pm.test(\"Validación de cantidad de palas\", () => {\r",
+									"     //console.log(pm.collectionVariables.get('NumPalas'));\r",
+									"     pm.expect((jsonData._vehicleData.length)).to.eql(pm.collectionVariables.get('NumPalas'));\r",
+									"});\r",
+									"\r",
+									"//console.log(pm.collectionVariables.get('namePala'+1));\r",
+									"pm.test(\"Validación de fecha por pala\", () => {\r",
+									"for (cont=0;cont<jsonData._vehicleIds.length;cont++){  \r",
+									"   // var idvh=jsonData._vehicleIds[cont]._id;\r",
+									"    var cont2; //segundo contador\r",
+									"    for (cont2=0;cont2<jsonData._vehicleIds.length;cont2++){\r",
+									"        if(jsonData._vehicleIds[cont2]._name==pm.collectionVariables.get('namePala'+cont)){\r",
+									"            id=jsonData._vehicleIds[cont2]._id;\r",
+									"            console.log(id);            \r",
+									"         }\r",
+									"        if(id===jsonData._vehicleData[cont2]._id){\r",
+									"                pm.expect(jsonData._vehicleData[cont2]._positions[0]._datetime).to.eql(pm.collectionVariables.get('fechaPala'+cont));\r",
+									"        }\r",
+									"    }  \r",
+									"}\r",
+									"});\r",
+									"//console.log(id);\r",
+									"//console.log(jsonData._vehicleIds[cont]._name)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/shovel-positions",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"shovel-positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shovels report raw",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/shovels_report",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"shovels_report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shovel charts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/shovel-charts",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"shovel-charts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shovel tooltip",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/shovel-tooltip",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"shovel-tooltip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shovels charts settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/shovel_charts_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"shovel_charts_settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LH charts settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/lh_charts_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"lh_charts_settings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "compliance",
+			"item": [
+				{
+					"name": "Compliance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/compliance",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"compliance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance monthly",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/compliance_monthly",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"compliance_monthly"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance menu mlp staging*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/compliance-menu-mlp-staging",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"compliance-menu-mlp-staging"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance texture weekly raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/batch/compliance",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"batch",
+								"compliance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance texture weekly*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/queries/compliance-texture",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"queries",
+								"compliance-texture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "compliance texture monthly raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fd-timaserver-mlp-staging.azurefd.net/assets/remote-object/batch/compliance_monthly",
+							"protocol": "https",
+							"host": [
+								"fd-timaserver-mlp-staging",
+								"azurefd",
+								"net"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"batch",
+								"compliance_monthly"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance texture monthly*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/compliance-texture-monthly",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"compliance-texture-monthly"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance texture yearly raw",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/batch/compliance_yearly",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"batch",
+								"compliance_yearly"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance DMH",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/compliance-menu-dmh",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"compliance-menu-dmh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance charts settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/compliance_charts_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"compliance_charts_settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compliance charts settings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settings\": [\r\n        {\r\n            \"group\": \"compliance_indicators\",\r\n            \"key\": \"mass_unit_label\",\r\n            \"value\": \"Kt\"\r\n        },\r\n        {\r\n            \"group\": \"compliance_indicators\",\r\n            \"key\": \"volume_unit_label\",\r\n            \"value\": \"KBCM\"\r\n        },\r\n        {\r\n            \"group\": \"compliance_indicators\",\r\n            \"key\": \"fillbar_unit_label\",\r\n            \"value\": \"%\"\r\n        },\r\n        {\r\n            \"group\": \"compliance_indicators\",\r\n            \"key\": \"fillbar_op\",\r\n            \"value\": \"*\"\r\n        },\r\n        {\r\n            \"group\": \"compliance_indicators\",\r\n            \"key\": \"fillbar_factor\",\r\n            \"value\": \"100.0\"\r\n        },\r\n        {\r\n            \"group\": \"compliance_indicators\",\r\n            \"key\": \"fillbar_max_value\",\r\n            \"value\": \"200.0\"\r\n        },\r\n        {\r\n            \"group\": \"compliance_indicators\",\r\n            \"key\": \"extaction_kpi_op\",\r\n            \"value\": \"/\"\r\n        },\r\n        {\r\n            \"group\": \"compliance_indicators\",\r\n            \"key\": \"extaction_kpi_factor\",\r\n            \"value\": \"1000.0\"\r\n        },\r\n        {\r\n            \"group\": \"compliance_indicators\",\r\n            \"key\": \"differential_chart_op\",\r\n            \"value\": \"\"\r\n        },\r\n        {\r\n            \"group\": \"compliance_indicators\",\r\n            \"key\": \"differential_chart_factor\",\r\n            \"value\": \"1\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/compliance_charts_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"compliance_charts_settings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "drilling",
+			"item": [
+				{
+					"name": "Driller charts settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/driller_charts_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"driller_charts_settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driller charts settings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/driller_charts_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"driller_charts_settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Per driller charts settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/per_driller_charts_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"per_driller_charts_settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Per driller charts settings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"settings\": [\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF-07\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF-21\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF-22\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF-23\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF-24\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF-25\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF-26\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF03\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF07\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF23\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF24\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF25\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_targetValue\",\r\n            \"key\": \"PF26\",\r\n            \"value\": \"50\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_deviation\",\r\n            \"key\": \"good\",\r\n            \"value\": \"0.2\"\r\n        },\r\n        {\r\n            \"group\": \"driller_charts_deviation\",\r\n            \"key\": \"bad\",\r\n            \"value\": \"0.3\"\r\n        },\r\n        {\r\n            \"group\": \"drill_speed_chart_settings\",\r\n            \"key\": \"unit\",\r\n            \"value\": \"m/h\"\r\n        },\r\n        {\r\n            \"group\": \"drill_speed_chart_settings\",\r\n            \"key\": \"op\",\r\n            \"value\": \"\"\r\n        },\r\n        {\r\n            \"group\": \"drill_speed_chart_settings\",\r\n            \"key\": \"factor\",\r\n            \"value\": \"1\"\r\n        },\r\n        {\r\n            \"group\": \"drill_speed_chart_settings\",\r\n            \"key\": \"yMin\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"group\": \"drill_speed_chart_settings\",\r\n            \"key\": \"yMax\",\r\n            \"value\": \"100.0\"\r\n        },\r\n        {\r\n            \"group\": \"effective_performance_chart_settings\",\r\n            \"key\": \"threshold\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"group\": \"effective_performance_chart_settings\",\r\n            \"key\": \"unit\",\r\n            \"value\": \"m/h\"\r\n        },\r\n        {\r\n            \"group\": \"effective_performance_chart_settings\",\r\n            \"key\": \"op\",\r\n            \"value\": \"\"\r\n        },\r\n        {\r\n            \"group\": \"effective_performance_chart_settings\",\r\n            \"key\": \"factor\",\r\n            \"value\": \"1\"\r\n        },\r\n        {\r\n            \"group\": \"utilization_chart_settings\",\r\n            \"key\": \"y_min\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"group\": \"utilization_chart_settings\",\r\n            \"key\": \"y_max\",\r\n            \"value\": \"100.0\"\r\n        },\r\n        {\r\n            \"group\": \"utilization_chart_settings\",\r\n            \"key\": \"expected\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"group\": \"utilization_chart_settings\",\r\n            \"key\": \"unit\",\r\n            \"value\": \"%\"\r\n        },\r\n        {\r\n            \"group\": \"utilization_chart_settings\",\r\n            \"key\": \"op\",\r\n            \"value\": \"*\"\r\n        },\r\n        {\r\n            \"group\": \"utilization_chart_settings\",\r\n            \"key\": \"factor\",\r\n            \"value\": \"100.0\"\r\n        },\r\n        {\r\n            \"group\": \"availability_chart_settings\",\r\n            \"key\": \"y_min\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"group\": \"availability_chart_settings\",\r\n            \"key\": \"y_max\",\r\n            \"value\": \"100.0\"\r\n        },\r\n        {\r\n            \"group\": \"availability_chart_settings\",\r\n            \"key\": \"expected\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"group\": \"availability_chart_settings\",\r\n            \"key\": \"unit\",\r\n            \"value\": \"%\"\r\n        },\r\n        {\r\n            \"group\": \"availability_chart_settings\",\r\n            \"key\": \"op\",\r\n            \"value\": \"*\"\r\n        },\r\n        {\r\n            \"group\": \"availability_chart_settings\",\r\n            \"key\": \"factor\",\r\n            \"value\": \"100.0\"\r\n        },\r\n        {\r\n            \"group\": \"wells_chart_settings\",\r\n            \"key\": \"y_min\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"group\": \"wells_chart_settings\",\r\n            \"key\": \"y_max\",\r\n            \"value\": \"100.0\"\r\n        },\r\n        {\r\n            \"group\": \"wells_chart_settings\",\r\n            \"key\": \"expected\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"group\": \"wells_chart_settings\",\r\n            \"key\": \"unit\",\r\n            \"value\": \"\"\r\n        },\r\n        {\r\n            \"group\": \"wells_chart_settings\",\r\n            \"key\": \"op\",\r\n            \"value\": \"\"\r\n        },\r\n        {\r\n            \"group\": \"wells_chart_settings\",\r\n            \"key\": \"factor\",\r\n            \"value\": \"1\"\r\n        },\r\n        {\r\n            \"group\": \"distance_chart_settings\",\r\n            \"key\": \"y_min\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"group\": \"distance_chart_settings\",\r\n            \"key\": \"y_max\",\r\n            \"value\": \"100.0\"\r\n        },\r\n        {\r\n            \"group\": \"distance_chart_settings\",\r\n            \"key\": \"expected\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"group\": \"distance_chart_settings\",\r\n            \"key\": \"unit\",\r\n            \"value\": \"m\"\r\n        },\r\n        {\r\n            \"group\": \"distance_chart_settings\",\r\n            \"key\": \"op\",\r\n            \"value\": \"\"\r\n        },\r\n        {\r\n            \"group\": \"distance_chart_settings\",\r\n            \"key\": \"factor\",\r\n            \"value\": \"1\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/per_driller_charts_settings",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"per_driller_charts_settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driller tooltip",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/driller-tooltip",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"driller-tooltip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "driller positions raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/driller_positions",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"driller_positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driller positions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/driller-positions",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"driller-positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Drill and blast menu (raw)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/drill_report",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"drill_report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driller and blast menu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/drill-and-blast-menu",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"drill-and-blast-menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "raw_per_drill_report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/raw_per_drill_report",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"raw_per_drill_report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "per_drill_report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/per_drill_report",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"per_drill_report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driller charts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/driller-charts",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"driller-charts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Well texture",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/query/wells_texture",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"wells_texture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Well texture",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/wells_texture",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"wells_texture"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "services",
+			"item": [
+				{
+					"name": "Vehicles tooltip",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/service-vehicles-tooltip",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"service-vehicles-tooltip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "services vehicles (raw)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/raw_service_vehicles",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"raw_service_vehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bulldozer coordinates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/bulldozer_coordinates",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"bulldozer_coordinates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicles positions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/service-vehicle-positions-polling",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"service-vehicle-positions-polling"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crusher positions*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/crusher-positions-mlp-staging",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"crusher-positions-mlp-staging"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "geometries",
+			"item": [
+				{
+					"name": "Uncrushables (raw)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/raw_uncrushables",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"raw_uncrushables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Uncrushables",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/uncrushables",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"uncrushables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Uncrushables",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"tricono_3265-188_pozo 188\",\r\n        \"type\": \"Martillo o Tricono\",\r\n        \"north\": \"99120.336\",\r\n        \"east\": \"100110.742\",\r\n        \"height\": \"3280.102\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/raw_uncrushables",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"raw_uncrushables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Topo gps mlp staging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/batch/topogps",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"batch",
+								"topogps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hollow-surface*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/hollow-surface",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"hollow-surface"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hollow zones dtm asc*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/hollow-zones-dtm-asc",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"hollow-zones-dtm-asc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orthophoto batch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/batch/orthophoto",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"batch",
+								"orthophoto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orthophoto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/query/orthophoto",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"orthophoto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Blockmodel texture density",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/query/blockmodel_texture_density",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"blockmodel_texture_density"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Blockmodel texture grade 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-object/query/blockmodel_texture_grade_1",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-object",
+								"query",
+								"blockmodel_texture_grade_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Blockmodel legend",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/blockmodel-legend",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"blockmodel-legend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pending blocks raw",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/pending_blocks",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"pending_blocks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pending blocks *",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/block-model-pending",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"block-model-pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Extracted blocks raw*",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/assets/remote-document/query/extracted_blocks",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"assets",
+								"remote-document",
+								"query",
+								"extracted_blocks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Extracted blocks *",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tima-server}}/queries/block-model-extracted",
+							"host": [
+								"{{tima-server}}"
+							],
+							"path": [
+								"queries",
+								"block-model-extracted"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{tima-server-api-key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "tima-server",
+			"value": "https://fd-timaserver-mlp-staging.azurefd.net",
+			"type": "string"
+		},
+		{
+			"key": "tima-server-api-key",
+			"value": "b1a91f51-b212-4aa1-bd9b-27b15c8468a4",
+			"type": "string"
+		},
+		{
+			"key": "currentdate",
+			"value": ""
+		},
+		{
+			"key": "NumPalas",
+			"value": ""
+		},
+		{
+			"key": "namePala0",
+			"value": ""
+		},
+		{
+			"key": "fechaPala0",
+			"value": ""
+		},
+		{
+			"key": "namePala1",
+			"value": ""
+		},
+		{
+			"key": "fechaPala1",
+			"value": ""
+		},
+		{
+			"key": "namePala2",
+			"value": ""
+		},
+		{
+			"key": "fechaPala2",
+			"value": ""
+		},
+		{
+			"key": "namePala3",
+			"value": ""
+		},
+		{
+			"key": "fechaPala3",
+			"value": ""
+		},
+		{
+			"key": "namePala4",
+			"value": ""
+		},
+		{
+			"key": "fechaPala4",
+			"value": ""
+		},
+		{
+			"key": "namePala5",
+			"value": ""
+		},
+		{
+			"key": "fechaPala5",
+			"value": ""
+		},
+		{
+			"key": "namePala6",
+			"value": ""
+		},
+		{
+			"key": "fechaPala6",
+			"value": ""
+		},
+		{
+			"key": "namePala7",
+			"value": ""
+		},
+		{
+			"key": "fechaPala7",
+			"value": ""
+		},
+		{
+			"key": "namePala8",
+			"value": ""
+		},
+		{
+			"key": "fechaPala8",
+			"value": ""
+		},
+		{
+			"key": "namePala9",
+			"value": ""
+		},
+		{
+			"key": "fechaPala9",
+			"value": ""
+		}
+	]
+}
